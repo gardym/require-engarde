@@ -3,6 +3,8 @@
   letter-spacing: -0.2em;
   display: none;
   margin: 0 10px;
+  position: relative;
+  -webkit-transition: left 700ms ease-in-out;
 }
 
 .sword-fighter .frame {

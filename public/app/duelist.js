@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'mover', 'animator'], function($, mover, animator) {
 
   var template = $('.sword-fighter');
 
@@ -6,16 +6,8 @@ define(['jquery'], function($) {
     var duelist = template.clone();
 
     duelist.fight = function() {
-      var currentFrame = 0;
-
-      setInterval(function animateFrame() {
-        var nextFrame = currentFrame % 2 + 1;
-
-        duelist.find('.frame.' + facing + '[frame=' + currentFrame + ']').hide();
-        duelist.find('.frame.' + facing + '[frame=' + nextFrame + ']').show();
-
-        currentFrame = nextFrame;
-      }, 200);
+      animator.animate(duelist, facing);
+      mover.backAndForward(duelist);
     };
 
     return duelist;
