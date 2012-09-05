@@ -1,0 +1,10 @@
+.sword-fighter {
+  font-size: 5em;
+  letter-spacing: -0.2em;
+  display: none;
+  margin: 0 10px;
+}
+
+.sword-fighter .frame {
+  display: none;
+}
