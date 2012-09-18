@@ -17,7 +17,7 @@ define(function() {
       showFrame(duelist, facing, nextFrame);
 
       currentFrame = nextFrame;
-    }, 20);
+    }, 200);
   };
 
   return {

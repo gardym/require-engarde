@@ -6,7 +6,13 @@ define(['jquery'], function($) {
     duelist.show().css('display', 'inline-block');
   };
 
+  var textElement = canvasElement.find('.text');
+  var text = function(displayText) {
+    textElement.html(displayText);
+  };
+
   return {
-    add: add
+    add: add,
+    text: text
   };
 });
