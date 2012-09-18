@@ -1,4 +1,5 @@
-define(['jquery', 'mover', 'animator'], function($, mover, animator) {
+define(['jquery', 'mover', 'animator', 'canvas', 'insults'],
+    function($, mover, animator, canvas, insults) {
 
   var template = $('.sword-fighter');
 
@@ -10,11 +11,20 @@ define(['jquery', 'mover', 'animator'], function($, mover, animator) {
       mover.backAndForward(duelist);
     };
 
+    duelist.insult = function(done) {
+      canvas.text(insults.insult());
+      setTimeout(done, 2000);
+    };
+
+    duelist.retort = function() {
+      canvas.text(insults.retort());
+    };
+
     return duelist;
   };
 
   return {
-    create: create
+    create: create,
   };
 
 });
