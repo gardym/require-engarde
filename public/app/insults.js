@@ -1,4 +1,4 @@
-define(['jquery', 'text!insults.txt', 'text!retorts.txt'],
+define(['jquery', 'text!txt/insults.txt', 'text!txt/retorts.txt'],
     function($, insults_text, retorts_text) {
 
   var insults = insults_text.split('\n');
