@@ -1,5 +1,5 @@
-define(['jquery', 'mover', 'animator', 'canvas', 'insults'],
-    function($, mover, animator, canvas, insults) {
+define(['jquery', 'mover', 'swords', 'canvas', 'insults'],
+    function($, mover, swords, canvas, insults) {
 
   var template = $('.sword-fighter');
 
@@ -7,8 +7,8 @@ define(['jquery', 'mover', 'animator', 'canvas', 'insults'],
     var duelist = template.clone();
 
     duelist.fight = function() {
-      animator.animate(duelist, facing);
-      mover.backAndForward(duelist);
+      swords.swing(duelist, facing);
+      mover.floatLikeAButterfly(duelist);
     };
 
     duelist.insult = function(done) {

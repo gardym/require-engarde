@@ -1,23 +1,14 @@
 define(function() {
 
-  var hideFrame = function(duelist, facing, number) {
-    duelist.find('.frame.' + facing + '[frame=' + number + ']').hide();
-  };
-
-  var showFrame = function(duelist, facing, number) {
-    duelist.find('.frame.' + facing + '[frame=' + number + ']').show();
-  };
-
-  var animate = function(duelist, facing) {
+  var animate = function(frames, rate) {
     var currentFrame = 0;
     setInterval(function animateFrame() {
-      var nextFrame = currentFrame % 2 + 1;
 
-      hideFrame(duelist, facing, currentFrame);
-      showFrame(duelist, facing, nextFrame);
+      frames.forEach(function(f) { f.hide() });
+      frames[currentFrame].show();
 
-      currentFrame = nextFrame;
-    }, 200);
+      currentFrame = (currentFrame + 1) % frames.length;
+    }, rate);
   };
 
   return {

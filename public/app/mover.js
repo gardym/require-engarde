@@ -1,6 +1,6 @@
 define(['jquery'], function($) {
 
-  var backAndForward = function(duelist) {
+  var moveBackAndForward = function(duelist) {
 
     var moveRight = true;
 
@@ -12,6 +12,6 @@ define(['jquery'], function($) {
   };
 
   return {
-    backAndForward: backAndForward
+    floatLikeAButterfly: moveBackAndForward
   };
 });
