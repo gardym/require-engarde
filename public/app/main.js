@@ -9,15 +9,5 @@ require(['jquery', 'canvas', 'duelist', 'insults'], function($, canvas, duelist,
   leftie.fight();
   rightie.fight();
 
-  canvas.text(insults.insult());
-  setInterval(function() {
-    canvas.text(insults.insult());
-  }, 4000);
-
-  setTimeout(function() {
-    canvas.text(insults.retort());
-    setInterval(function() {
-      canvas.text(insults.retort());
-    }, 4000);
-  }, 2000);
+  insults.yell();
 });

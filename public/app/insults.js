@@ -1,4 +1,6 @@
-define(['jquery', 'text!insults.txt', 'text!retorts.txt'], function($, insults_text, retorts_text) {
+define(['jquery', 'canvas', 'text!insults.txt', 'text!retorts.txt'],
+    function($, canvas, insults_text, retorts_text) {
+
   var insults = insults_text.split('\n');
   var retorts = retorts_text.split('\n');
 
@@ -19,8 +21,21 @@ define(['jquery', 'text!insults.txt', 'text!retorts.txt'], function($, insults_t
     return text + '\n\n' + marker;
   };
 
+  var yell = function() {
+    canvas.text(insult());
+    setInterval(function() {
+      canvas.text(insult());
+    }, 4000);
+
+    setTimeout(function() {
+      canvas.text(retort());
+      setInterval(function() {
+        canvas.text(retort());
+      }, 4000);
+    }, 2000);
+  };
+
   return {
-    insult: insult,
-    retort: retort
+    yell: yell
   };
 });
