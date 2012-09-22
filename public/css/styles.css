@@ -1,3 +1,23 @@
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+.title pre:first-child {
+  font-size: 3em;
+}
+
+.title pre {
+  line-height: 0.3em;
+  margin-top: 2px;
+  font-size: 2em;
+}
+
+.canvas {
+  text-align: center;
+}
+
 .sword-fighter {
   font-family: "Courier New", "Courier", monospace;
   font-size: 5em;
