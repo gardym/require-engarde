@@ -18,7 +18,7 @@ Inspired by _why's ASCII sword fighters from Art&&Code Synopsium[1] we present
 
 ### Follow along at home
 
-    fight.html (<script ... data-main='app/main')
+    index.html (<script ... data-main='app/main')
     -> app/main.js (follow the module dependencies)
 
 ### How to play
