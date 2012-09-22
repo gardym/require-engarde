@@ -1,5 +1,5 @@
 define(['jquery', 'mover', 'swords', 'canvas', 'insults'],
-    function($, mover, swords, canvas, insults) {
+       function($, mover, swords, canvas, insults) {
 
   var template = $('.sword-fighter');
 
