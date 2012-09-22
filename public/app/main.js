@@ -1,5 +1,5 @@
-require(['jquery', 'canvas', 'duelist', 'insults'],
-        function($, canvas, duelist, insults) {
+require(['jquery', 'canvas', 'duelist'],
+        function($, canvas, duelist) {
 
   var leftie = duelist.create('right');
   var rightie = duelist.create('left');
