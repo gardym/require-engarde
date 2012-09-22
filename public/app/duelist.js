@@ -6,14 +6,20 @@ define(['jquery', 'mover', 'swords', 'canvas', 'insults'],
   var create = function(facing) {
     var duelist = template.clone();
 
-    duelist.fight = function() {
+    duelist.fight = function(opponent) {
       swords.swing(duelist, facing);
       mover.floatLikeAButterfly(duelist);
+
+      if(opponent) {
+        opponent.fight();
+      }
     };
 
-    duelist.insult = function(done) {
+    duelist.insult = function(opponent) {
       canvas.text(insults.insult());
-      setTimeout(done, 2000);
+      setTimeout(function() {
+        opponent.retort();
+      }, 2000);
     };
 
     duelist.retort = function() {

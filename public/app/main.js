@@ -1,4 +1,5 @@
-require(['jquery', 'canvas', 'duelist', 'insults'], function($, canvas, duelist, insults) {
+require(['jquery', 'canvas', 'duelist', 'insults'],
+        function($, canvas, duelist, insults) {
 
   var leftie = duelist.create('right');
   var rightie = duelist.create('left');
@@ -6,17 +7,11 @@ require(['jquery', 'canvas', 'duelist', 'insults'], function($, canvas, duelist,
   canvas.add(leftie);
   canvas.add(rightie);
 
-  leftie.fight();
-  rightie.fight();
+  leftie.fight(rightie);
+  leftie.insult(rightie);
 
-  var hurlAbuse = function() {
-    leftie.insult(function() {
-      rightie.retort();
-    });
-  };
-
-  hurlAbuse();
   setInterval(function() {
-    hurlAbuse();
+    leftie.insult(rightie);
   }, 4000);
+
 });
